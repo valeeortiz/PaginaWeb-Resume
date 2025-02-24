@@ -3,9 +3,10 @@ sudo systemctl stop nginx
 pkill -f ngrok
 
 echo "Actualizando la aplicación..."
-cd /var/www/html || exit
+cd /var/www/html/PaginaWeb-Resume || exit
 
 sudo git pull origin main  
+sudo cp -r PaginaWeb-Resume/* /var/www/html
 
 echo "Iniciando NGINX..."
 sudo systemctl start nginx
